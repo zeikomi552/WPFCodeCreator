@@ -36,13 +36,13 @@ namespace WPFCodeCreator.ViewModels
 		}
 		#endregion
 
-		#region [PropertyItems]プロパティ
+		#region プロパティ変数[PropertyItems]プロパティ
 		/// <summary>
-		/// [PropertyItems]プロパティ用変数
+		/// プロパティ変数[PropertyItems]プロパティ用変数
 		/// </summary>
 		ModelList<PropertyM> _PropertyItems = new ModelList<PropertyM>();
 		/// <summary>
-		/// [PropertyItems]プロパティ
+		/// プロパティ変数[PropertyItems]プロパティ
 		/// </summary>
 		public ModelList<PropertyM> PropertyItems
 		{

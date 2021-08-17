@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/WPFCodeCreator/v16
+/MVVMCore/bin/Debug/net5.0-windows
+/MVVMCore/obj/Debug/net5.0-windows
+/WPFCodeCreator/bin/Debug/net5.0-windows
+/WPFCodeCreator/obj
+/MVVMCore/obj
