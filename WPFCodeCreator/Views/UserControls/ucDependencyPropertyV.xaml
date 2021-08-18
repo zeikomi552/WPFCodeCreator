@@ -25,7 +25,7 @@
 
         <WrapPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="50" Margin="5" VerticalAlignment="Center" Text="クラス名"/>
+                <TextBlock Margin="5" VerticalAlignment="Center" Text="クラス名"/>
                 <TextBlock VerticalAlignment="Center" Text=":"/>
                 <TextBox Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <b:Interaction.Triggers>
@@ -36,7 +36,7 @@
                 </TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="50" Margin="5" VerticalAlignment="Center" Text="型"/>
+                <TextBlock Margin="5" VerticalAlignment="Center" Text="型"/>
                 <TextBlock VerticalAlignment="Center" Text=":"/>
                 <TextBox Margin="5" VerticalAlignment="Center" Width="75" Text="{Binding PropertyItem.TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <b:Interaction.Triggers>
@@ -48,7 +48,7 @@
                 </TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="50" Margin="5" VerticalAlignment="Center" Text="変数名"/>
+                <TextBlock Margin="5" VerticalAlignment="Center" Text="変数名"/>
                 <TextBlock VerticalAlignment="Center" Text=":"/>
                 <TextBox Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding PropertyItem.ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <b:Interaction.Triggers>
@@ -59,7 +59,7 @@
                 </TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Width="50" Margin="5" VerticalAlignment="Center" Text="説明"/>
+                <TextBlock Margin="5" VerticalAlignment="Center" Text="説明"/>
                 <TextBlock VerticalAlignment="Center" Text=":"/>
                 <TextBox Margin="5" VerticalAlignment="Center" Width="300" Text="{Binding PropertyItem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <b:Interaction.Triggers>
