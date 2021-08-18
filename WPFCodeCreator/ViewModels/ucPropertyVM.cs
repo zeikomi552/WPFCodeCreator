@@ -1,4 +1,5 @@
-﻿using MVVMCore.BaseClass;
+﻿using Microsoft.Win32;
+using MVVMCore.BaseClass;
 using MVVMCore.Common.Utilities;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,80 @@ namespace WPFCodeCreator.ViewModels
 					_PropertyItems = value;
 					NotifyPropertyChanged("PropertyItems");
 				}
+			}
+		}
+		#endregion
+
+		#region 保存処理
+		/// <summary>
+		/// 保存処理
+		/// </summary>
+		public void Save()
+		{
+			try
+			{
+				// ダイアログのインスタンスを生成
+				var dialog = new SaveFileDialog();
+
+				// ファイルの種類を設定
+				dialog.Filter = "WPFCodeCreator用ファイル(*.wpfcc)|*.wpfcc";
+
+				// ダイアログを表示する
+				if (dialog.ShowDialog() == true)
+				{
+					XMLUtil.Seialize<ModelList<PropertyM>>(dialog.FileName, this.PropertyItems);
+				}
+			}
+			catch(Exception e)
+            {
+				ShowMessage.ShowErrorOK(e.Message, "Error");
+            }
+		}
+        #endregion
+
+        #region 読込処理
+        /// <summary>
+        /// 読込処理
+        /// </summary>
+        public void Load()
+		{
+			try
+			{
+				// ダイアログのインスタンスを生成
+				var dialog = new OpenFileDialog();
+
+				// ファイルの種類を設定
+				dialog.Filter = "WPFCodeCreator用ファイル(*.wpfcc)|*.wpfcc";
+
+				// ダイアログを表示する
+				if (dialog.ShowDialog() == true)
+				{
+					this.PropertyItems = XMLUtil.Deserialize<ModelList<PropertyM>>(dialog.FileName);
+				}
+			}
+			catch (Exception e)
+			{
+				ShowMessage.ShowErrorOK(e.Message, "Error");
+			}
+		}
+		#endregion
+
+		#region チェック解除
+		/// <summary>
+		/// チェック解除
+		/// </summary>
+		public void ResetCheck()
+		{
+			try
+			{
+				foreach (var tmp in this.PropertyItems.Items)
+				{
+					tmp.IsVisible = false;
+				}
+			}
+			catch (Exception e)
+			{
+				ShowMessage.ShowErrorOK(e.Message, "Error");
 			}
 		}
 		#endregion

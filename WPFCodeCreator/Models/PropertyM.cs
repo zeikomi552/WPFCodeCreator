@@ -209,37 +209,45 @@ namespace WPFCodeCreator.Models
 			string kata = type_name.Trim().ToLower();
 			null_check = false;
 
-			if (kata.Substring(kata.Length - 1).Equals("?"))
+			if (kata.Length > 0)
 			{
-				null_check = true;
-				return null;
-			}
-			else if (kata.Equals("int"))
-			{
-				return "0";
-			}
-			else if (kata.Equals("double") || kata.Equals("float"))
-			{
-				return "0.0";
-			}
-			else if (kata.Equals("bool"))
-			{
-				return "false";
-			}
-			else if (kata.Equals("string"))
-			{
-				null_check = true;
-				return "string.Empty";
-			}
-			else if (kata.Equals("datetime"))
-			{
-				return "DateTime.MinValue";
+				if (kata.Substring(kata.Length - 1).Equals("?"))
+				{
+					null_check = true;
+					return null;
+				}
+				else if (kata.Equals("int"))
+				{
+					return "0";
+				}
+				else if (kata.Equals("double") || kata.Equals("float"))
+				{
+					return "0.0";
+				}
+				else if (kata.Equals("bool"))
+				{
+					return "false";
+				}
+				else if (kata.Equals("string"))
+				{
+					null_check = true;
+					return "string.Empty";
+				}
+				else if (kata.Equals("datetime"))
+				{
+					return "DateTime.MinValue";
+				}
+				else
+				{
+					null_check = true;
+					return string.Format("new {0}()", kata);
+				}
 			}
 			else
 			{
-				null_check = true;
-				return string.Format("new {0}()", kata);
+				return string.Empty;
 			}
+			
 		}
 		#endregion
 
