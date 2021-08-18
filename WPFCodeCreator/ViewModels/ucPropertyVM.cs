@@ -12,6 +12,56 @@ namespace WPFCodeCreator.ViewModels
 {
     public class ucPropertyVM : ViewModelBase
     {
+		#region クラス名[ClassName]プロパティ
+		/// <summary>
+		/// クラス名[ClassName]プロパティ用変数
+		/// </summary>
+		string _ClassName = string.Empty;
+		/// <summary>
+		/// クラス名[ClassName]プロパティ
+		/// </summary>
+		public string ClassName
+		{
+			get
+			{
+				return _ClassName;
+			}
+			set
+			{
+				if (!_ClassName.Equals(value))
+				{
+					_ClassName = value;
+					NotifyPropertyChanged("ClassName");
+				}
+			}
+		}
+		#endregion
+
+		#region クラス表示フラグ[ClassVisible]プロパティ
+		/// <summary>
+		/// クラス表示フラグ[ClassVisible]プロパティ用変数
+		/// </summary>
+		bool _ClassVisible = false;
+		/// <summary>
+		/// クラス表示フラグ[ClassVisible]プロパティ
+		/// </summary>
+		public bool ClassVisible
+		{
+			get
+			{
+				return _ClassVisible;
+			}
+			set
+			{
+				if (!_ClassVisible.Equals(value))
+				{
+					_ClassVisible = value;
+					NotifyPropertyChanged("ClassVisible");
+				}
+			}
+		}
+		#endregion
+
 		#region プロパティ変数ソースコード[PropertyCode]プロパティ
 		/// <summary>
 		/// プロパティ変数ソースコード[PropertyCode]プロパティ用変数
@@ -146,6 +196,12 @@ namespace WPFCodeCreator.ViewModels
             {
 				StringBuilder code = new StringBuilder();
 
+				if (this.ClassVisible)
+                {
+					code.AppendLine($"public class {this.ClassName} : INotifyPropertyChanged");
+					code.AppendLine($"{{");
+				}
+
 				foreach (var tmp in this.PropertyItems)
 				{
 					if (tmp.IsVisible)
@@ -153,9 +209,25 @@ namespace WPFCodeCreator.ViewModels
 						code.AppendLine(tmp.PropertyCode);
 					}
 				}
+
+				if (this.ClassVisible)
+				{
+					code.AppendLine("	#region INotifyPropertyChanged");
+					code.AppendLine("	public event PropertyChangedEventHandler PropertyChanged;");
+					code.AppendLine("");
+					code.AppendLine("	private void NotifyPropertyChanged(String info)");
+					code.AppendLine("	{");
+					code.AppendLine("		if (PropertyChanged != null)");
+					code.AppendLine("		{");
+					code.AppendLine("			PropertyChanged(this, new PropertyChangedEventArgs(info));");
+					code.AppendLine("		}");
+					code.AppendLine("	}");
+					code.AppendLine("	#endregion");
+					code.AppendLine($"}}");
+				}
 				this.PropertyCode = code.ToString();
-            }
-            catch
+			}
+			catch
             {
 
             }
