@@ -112,6 +112,16 @@ namespace WPFCodeCreator.ViewModels
 		}
 		#endregion
 
+		#region 初期化処理
+		/// <summary>
+		/// 初期化処理
+		/// </summary>
+		public void Init()
+		{
+
+		}
+		#endregion
+
 		#region 保存処理
 		/// <summary>
 		/// 保存処理

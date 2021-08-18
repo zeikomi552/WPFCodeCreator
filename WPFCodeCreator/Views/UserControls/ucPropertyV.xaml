@@ -13,7 +13,11 @@
     <UserControl.DataContext>
         <Binding Source="{StaticResource prop_vm}"/>
     </UserControl.DataContext>
-    
+    <b:Interaction.Triggers>
+        <b:EventTrigger>
+            <b:CallMethodAction MethodName="Init" TargetObject="{Binding}"/>
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
     <Grid DataContext="{Binding Source={StaticResource prop_vm}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
