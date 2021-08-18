@@ -24,7 +24,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding PropertyCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <GroupBox Header="ソースコード">
+            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding PropertyCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </GroupBox>
 
         <Grid Margin="5" Grid.Column="1">
             <Grid.RowDefinitions>
