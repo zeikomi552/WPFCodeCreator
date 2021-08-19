@@ -28,131 +28,132 @@
             <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding PropertyCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </GroupBox>
 
-        <Grid Margin="5" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
+        <GroupBox Header="入力項目" Grid.Column="1" Margin="5">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding ClassVisible}" VerticalAlignment="Center" Margin="5" Content="クラス表示">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox IsChecked="{Binding ClassVisible}" VerticalAlignment="Center" Margin="5" Content="クラス表示">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Checked">
+                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                            <b:EventTrigger EventName="Unchecked">
+                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBox Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="TextChanged">
+                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </TextBox>
+                </Grid>
+
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding PropertyItems.Items}" Margin="5" Grid.Row="1">
                     <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="Checked">
-                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                        </b:EventTrigger>
-                        <b:EventTrigger EventName="Unchecked">
+                        <b:EventTrigger EventName="CurrentCellChanged">
                             <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
-                </CheckBox>
-                <TextBox Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1">
-                    <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="TextChanged">
-                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                        </b:EventTrigger>
-                    </b:Interaction.Triggers>
-                </TextBox>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn IsReadOnly="True" Header="表示">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Checked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                            <b:EventTrigger EventName="Unchecked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="リスト">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Checked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                            <b:EventTrigger EventName="Unchecked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="型" Binding="{Binding TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="変数名" Binding="{Binding ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="初期値" Binding="{Binding InitializeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="説明" Binding="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTemplateColumn Header="nullチェック">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding NullCheck, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Checked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                            <b:EventTrigger EventName="Unchecked">
+                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Height="50" Margin="5" Content="解除">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Click">
+                                <b:CallMethodAction MethodName="ResetCheck" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </Button>
+
+                    <Button Grid.Column="1" Height="50" Margin="5" Content="保存">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Click">
+                                <b:CallMethodAction MethodName="Save" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </Button>
+                    <Button Grid.Column="2" Height="50" Margin="5" Content="読込">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Click">
+                                <b:CallMethodAction MethodName="Load" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+
+                    </Button>
+                </Grid>
             </Grid>
-
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding PropertyItems.Items}" Margin="5" Grid.Row="1">
-                <b:Interaction.Triggers>
-                    <b:EventTrigger EventName="CurrentCellChanged">
-                        <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                    </b:EventTrigger>
-                </b:Interaction.Triggers>
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn IsReadOnly="True" Header="表示">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <b:Interaction.Triggers>
-                                        <b:EventTrigger EventName="Checked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                        <b:EventTrigger EventName="Unchecked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                    </b:Interaction.Triggers>
-                                </CheckBox>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="リスト">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <b:Interaction.Triggers>
-                                        <b:EventTrigger EventName="Checked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                        <b:EventTrigger EventName="Unchecked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                    </b:Interaction.Triggers>
-                                </CheckBox>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="型" Binding="{Binding TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="変数名" Binding="{Binding ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="初期値" Binding="{Binding InitializeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="説明" Binding="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTemplateColumn Header="nullチェック">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding NullCheck, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <b:Interaction.Triggers>
-                                        <b:EventTrigger EventName="Checked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                        <b:EventTrigger EventName="Unchecked">
-                                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
-                                        </b:EventTrigger>
-                                    </b:Interaction.Triggers>
-                                </CheckBox>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Height="50" Margin="5" Content="解除">
-                    <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="Click">
-                            <b:CallMethodAction MethodName="ResetCheck" TargetObject="{Binding}"/>
-                        </b:EventTrigger>
-                    </b:Interaction.Triggers>
-                </Button>
-
-                <Button Grid.Column="1" Margin="5" Content="保存">
-                    <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="Click">
-                            <b:CallMethodAction MethodName="Save" TargetObject="{Binding}"/>
-                        </b:EventTrigger>
-                    </b:Interaction.Triggers>
-                </Button>
-                <Button Grid.Column="2" Margin="5" Content="読込">
-                    <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="Click">
-                            <b:CallMethodAction MethodName="Load" TargetObject="{Binding}"/>
-                        </b:EventTrigger>
-                    </b:Interaction.Triggers>
-
-                </Button>
-            </Grid>
-        </Grid>
-
+        </GroupBox>
     </Grid>
 </UserControl>
