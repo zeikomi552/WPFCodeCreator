@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFCodeCreator.Views.UserControls"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:ViewModels="clr-namespace:WPFCodeCreator.ViewModels" x:Class="WPFCodeCreator.Views.UserControls.ucConverterV"
              mc:Ignorable="d" 
@@ -34,7 +35,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5" Text="バインドする型" VerticalAlignment="Center"/>
                         <TextBlock Margin="5" Text=":" VerticalAlignment="Center"/>
-                        <TextBox Width="200" Margin="5" Text="{Binding BindingTypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <TextBox md:HintAssist.Hint="int" Width="200" Margin="5" Text="{Binding BindingTypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
                             <b:Interaction.Triggers>
                                 <b:EventTrigger EventName="TextChanged">
                                     <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
@@ -45,7 +46,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5" Text="変換する型" VerticalAlignment="Center"/>
                         <TextBlock Margin="5" Text=":" VerticalAlignment="Center"/>
-                        <TextBox Width="200" Margin="5" Text="{Binding ConvertTypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <TextBox md:HintAssist.Hint="Color" Width="200" Margin="5" Text="{Binding ConvertTypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
                             <b:Interaction.Triggers>
                                 <b:EventTrigger EventName="TextChanged">
                                     <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
@@ -56,7 +57,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5" Text="コンバーター名" VerticalAlignment="Center"/>
                         <TextBlock Margin="5" Text=":" VerticalAlignment="Center"/>
-                        <TextBox Width="200" Margin="5" Text="{Binding ConverterName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <TextBox md:HintAssist.Hint="intToColor" Width="200" Margin="5" Text="{Binding ConverterName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Cursor="IBeam">
                             <b:Interaction.Triggers>
                                 <b:EventTrigger EventName="TextChanged">
                                     <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>

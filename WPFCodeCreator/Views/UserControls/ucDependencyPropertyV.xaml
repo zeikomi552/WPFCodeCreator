@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFCodeCreator.Views.UserControls"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:ViewModels="clr-namespace:WPFCodeCreator.ViewModels" x:Class="WPFCodeCreator.Views.UserControls.ucDependencyPropertyV"
              mc:Ignorable="d" 
@@ -31,7 +32,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5" VerticalAlignment="Center" Text="クラス名"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox md:HintAssist.Hint="SampleClass" Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam">
                         <b:Interaction.Triggers>
                             <b:EventTrigger EventName="TextChanged">
                                 <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
@@ -42,7 +43,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5" VerticalAlignment="Center" Text="型"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox Margin="5" VerticalAlignment="Center" Width="75" Text="{Binding PropertyItem.TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox md:HintAssist.Hint="int" Margin="5" VerticalAlignment="Center" Width="75" Text="{Binding PropertyItem.TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <b:Interaction.Triggers>
                             <b:EventTrigger EventName="TextChanged">
                                 <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
@@ -54,7 +55,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5" VerticalAlignment="Center" Text="変数名"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding PropertyItem.ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox md:HintAssist.Hint="SampleValue" Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding PropertyItem.ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <b:Interaction.Triggers>
                             <b:EventTrigger EventName="TextChanged">
                                 <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
@@ -65,7 +66,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5" VerticalAlignment="Center" Text="説明"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox Margin="5" VerticalAlignment="Center" Width="300" Text="{Binding PropertyItem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox md:HintAssist.Hint="変数の説明" Margin="5" VerticalAlignment="Center" Width="300" Text="{Binding PropertyItem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam">
                         <b:Interaction.Triggers>
                             <b:EventTrigger EventName="TextChanged">
                                 <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>

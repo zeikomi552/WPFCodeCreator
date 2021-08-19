@@ -87,10 +87,10 @@ namespace WPFCodeCreator.ViewModels
 
 		public ucDependencyPropertyVM()
 		{
-			this.ClassName = "SampleClass";
-			this.PropertyItem.TypeName = "int";
-			this.PropertyItem.Description = "変数の説明";
-			this.PropertyItem.ValueName = "ValueName";
+			//this.ClassName = "SampleClass";
+			//this.PropertyItem.TypeName = "int";
+			//this.PropertyItem.Description = "変数の説明";
+			//this.PropertyItem.ValueName = "ValueName";
 		}
 
 
