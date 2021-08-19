@@ -18,12 +18,15 @@
     </b:Interaction.Triggers>
     
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <GroupBox Margin="5" Header="入力項目">
+        <GroupBox Margin="5" Header="ソースコード">
+            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding SourceCode}" />
+        </GroupBox>
+        <GroupBox Margin="5" Grid.Column="1" Header="入力項目">
             <WrapPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5" VerticalAlignment="Center" Text="クラス名"/>
@@ -71,9 +74,6 @@
                     </TextBox>
                 </StackPanel>
             </WrapPanel>
-        </GroupBox>
-        <GroupBox Margin="5" Grid.Row="1" Header="ソースコード">
-            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding SourceCode}" />
         </GroupBox>
 
     </Grid>

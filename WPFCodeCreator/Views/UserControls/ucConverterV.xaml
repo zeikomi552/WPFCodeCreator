@@ -17,12 +17,18 @@
         </b:EventTrigger>
     </b:Interaction.Triggers>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <Grid>
+            <GroupBox Margin="5" Header="ソースコード">
+                <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding SourceCode}"/>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Column="1">
             <GroupBox Margin="5" Header="入力項目">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -62,11 +68,6 @@
             </GroupBox>
 
 
-        </Grid>
-        <Grid Grid.Row="1">
-            <GroupBox Margin="5" Header="ソースコード">
-                <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding SourceCode}"/>
-            </GroupBox>
         </Grid>
     </Grid>
 </UserControl>
