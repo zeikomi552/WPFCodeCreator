@@ -15,9 +15,12 @@
             <TabItem Header="依存プロパティ">
                 <UserControls:ucDependencyPropertyV/>
             </TabItem>
-            <TabItem Header="コンバーター"/>
+            <TabItem Header="コンバーター">
+                <UserControls:ucConverterV/>
+            </TabItem>
             <TabItem Header="アクション"/>
             <TabItem Header="ビヘイビア"/>
+            
         </TabControl>
     </Grid>
 </Window>

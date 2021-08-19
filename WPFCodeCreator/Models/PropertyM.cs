@@ -192,6 +192,10 @@ namespace WPFCodeCreator.Models
 		}
 		#endregion
 
+		#region プロパティのソースコード
+		/// <summary>
+		/// プロパティのソースコード
+		/// </summary>
 		public string PropertyCode
         {
 			get
@@ -199,12 +203,16 @@ namespace WPFCodeCreator.Models
 				return CreateProperty();
 			}
         }
+		#endregion
 
 		#region 初期値の設定
 		/// <summary>
 		/// 初期値の設定
 		/// </summary>
-		private static string GetInitialValue(string type_name, out bool null_check)
+		/// <param name="type_name">型名</param>
+		/// <param name="null_check">nullチェックが必要かどうか</param>
+		/// <returns>初期化の際のコード</returns>
+		public static string GetInitialValue(string type_name, out bool null_check)
 		{
 			string kata = type_name.Trim().ToLower();
 			null_check = false;
@@ -240,7 +248,7 @@ namespace WPFCodeCreator.Models
 				else
 				{
 					null_check = true;
-					return string.Format("new {0}()", kata);
+					return string.Format("new {0}()", type_name.Trim());
 				}
 			}
 			else
