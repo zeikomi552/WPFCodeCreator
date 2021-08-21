@@ -20,8 +20,12 @@
             <TabItem Header="コンバーター">
                 <UserControls:ucConverterV/>
             </TabItem>
-            <TabItem Header="アクション"/>
-            <TabItem Header="ビヘイビア"/>
+            <TabItem Header="アクション">
+                <UserControls:ucActionV />
+            </TabItem>
+            <TabItem Header="ビヘイビア">
+                <UserControls:ucBehaviorV />
+            </TabItem>
             
         </TabControl>
     </Grid>
