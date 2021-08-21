@@ -25,56 +25,35 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Margin="5" Header="ソースコード">
-            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding SourceCode}" />
+            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding Parameters.SourceCode, Mode=OneWay}" />
         </GroupBox>
         <GroupBox Margin="5" Grid.Column="1" Header="入力項目">
-            <WrapPanel>
+            <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="5" VerticalAlignment="Center" Text="クラス名"/>
+                    <TextBlock Width="100" Margin="5" VerticalAlignment="Center" Text="ユーザーコントロール名"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox md:HintAssist.Hint="SampleClass" Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="TextChanged">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-                    </TextBox>
+                    <TextBox md:HintAssist.Hint="SampleClass" Margin="5" VerticalAlignment="Center" Width="100"
+                             Text="{Binding Parameters.ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="5" VerticalAlignment="Center" Text="型"/>
+                    <TextBlock Width="100" Margin="5" VerticalAlignment="Center" Text="型"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox md:HintAssist.Hint="int" Margin="5" VerticalAlignment="Center" Width="75" Text="{Binding PropertyItem.TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="TextChanged">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-
-                    </TextBox>
+                    <TextBox md:HintAssist.Hint="int" Margin="5" VerticalAlignment="Center" Width="75"
+                             Text="{Binding Parameters.TypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="5" VerticalAlignment="Center" Text="変数名"/>
+                    <TextBlock Width="100" Margin="5" VerticalAlignment="Center" Text="変数名"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox md:HintAssist.Hint="SampleValue" Margin="5" VerticalAlignment="Center" Width="100" Text="{Binding PropertyItem.ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="TextChanged">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-                    </TextBox>
+                    <TextBox md:HintAssist.Hint="SampleValue" Margin="5" VerticalAlignment="Center" Width="100"
+                             Text="{Binding Parameters.ValueName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="5" VerticalAlignment="Center" Text="説明"/>
+                    <TextBlock Width="100" Margin="5" VerticalAlignment="Center" Text="説明"/>
                     <TextBlock VerticalAlignment="Center" Text=":"/>
-                    <TextBox md:HintAssist.Hint="変数の説明" Margin="5" VerticalAlignment="Center" Width="300" Text="{Binding PropertyItem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="TextChanged">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-                    </TextBox>
+                    <TextBox md:HintAssist.Hint="変数の説明" Margin="5" VerticalAlignment="Center" Width="300"
+                             Text="{Binding Parameters.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam"/>
                 </StackPanel>
-            </WrapPanel>
+            </StackPanel>
         </GroupBox>
 
     </Grid>

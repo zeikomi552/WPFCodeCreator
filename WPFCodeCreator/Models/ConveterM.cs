@@ -13,7 +13,7 @@ namespace WPFCodeCreator.Models
 		/// <summary>
 		/// バインドする型[BindingTypeName]プロパティ用変数
 		/// </summary>
-		string _BindingTypeName = string.Empty;
+		string _BindingTypeName = "int";
 		/// <summary>
 		/// バインドする型[BindingTypeName]プロパティ
 		/// </summary>
@@ -39,7 +39,7 @@ namespace WPFCodeCreator.Models
 		/// <summary>
 		/// 変換する型[ConvertTypeName]プロパティ用変数
 		/// </summary>
-		string _ConvertTypeName = string.Empty;
+		string _ConvertTypeName = "bool";
 		/// <summary>
 		/// 変換する型[ConvertTypeName]プロパティ
 		/// </summary>
@@ -65,7 +65,7 @@ namespace WPFCodeCreator.Models
 		/// <summary>
 		/// コンバーター名[ConverterName]プロパティ用変数
 		/// </summary>
-		string _ConverterName = string.Empty;
+		string _ConverterName = "IntToBoolean";
 		/// <summary>
 		/// コンバーター名[ConverterName]プロパティ
 		/// </summary>
