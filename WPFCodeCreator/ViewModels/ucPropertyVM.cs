@@ -12,106 +12,31 @@ namespace WPFCodeCreator.ViewModels
 {
     public class ucPropertyVM : ViewModelBase
     {
-		#region クラス名[ClassName]プロパティ
+
+		#region パラメータ[Parameters]プロパティ
 		/// <summary>
-		/// クラス名[ClassName]プロパティ用変数
+		/// パラメータ[Parameters]プロパティ用変数
 		/// </summary>
-		string _ClassName = string.Empty;
+		PropetyItemCollectionM _Parameters = new PropetyItemCollectionM();
 		/// <summary>
-		/// クラス名[ClassName]プロパティ
+		/// パラメータ[Parameters]プロパティ
 		/// </summary>
-		public string ClassName
+		public PropetyItemCollectionM Parameters
 		{
 			get
 			{
-				return _ClassName;
+				return _Parameters;
 			}
 			set
 			{
-				if (!_ClassName.Equals(value))
+				if (_Parameters == null || !_Parameters.Equals(value))
 				{
-					_ClassName = value;
-					NotifyPropertyChanged("ClassName");
+					_Parameters = value;
+					NotifyPropertyChanged("Parameters");
 				}
 			}
 		}
 		#endregion
-
-		#region クラス表示フラグ[ClassVisible]プロパティ
-		/// <summary>
-		/// クラス表示フラグ[ClassVisible]プロパティ用変数
-		/// </summary>
-		bool _ClassVisible = false;
-		/// <summary>
-		/// クラス表示フラグ[ClassVisible]プロパティ
-		/// </summary>
-		public bool ClassVisible
-		{
-			get
-			{
-				return _ClassVisible;
-			}
-			set
-			{
-				if (!_ClassVisible.Equals(value))
-				{
-					_ClassVisible = value;
-					NotifyPropertyChanged("ClassVisible");
-				}
-			}
-		}
-		#endregion
-
-		#region プロパティ変数ソースコード[PropertyCode]プロパティ
-		/// <summary>
-		/// プロパティ変数ソースコード[PropertyCode]プロパティ用変数
-		/// </summary>
-		string _PropertyCode = string.Empty;
-		/// <summary>
-		/// プロパティ変数ソースコード[PropertyCode]プロパティ
-		/// </summary>
-		public string PropertyCode
-		{
-			get
-			{
-				return _PropertyCode;
-			}
-			set
-			{
-				if (!_PropertyCode.Equals(value))
-				{
-					_PropertyCode = value;
-					NotifyPropertyChanged("PropertyCode");
-				}
-			}
-		}
-		#endregion
-
-		#region プロパティ変数[PropertyItems]プロパティ
-		/// <summary>
-		/// プロパティ変数[PropertyItems]プロパティ用変数
-		/// </summary>
-		ModelList<PropertyM> _PropertyItems = new ModelList<PropertyM>();
-		/// <summary>
-		/// プロパティ変数[PropertyItems]プロパティ
-		/// </summary>
-		public ModelList<PropertyM> PropertyItems
-		{
-			get
-			{
-				return _PropertyItems;
-			}
-			set
-			{
-				if (_PropertyItems == null || !_PropertyItems.Equals(value))
-				{
-					_PropertyItems = value;
-					NotifyPropertyChanged("PropertyItems");
-				}
-			}
-		}
-		#endregion
-
 		#region 初期化処理
 		/// <summary>
 		/// 初期化処理
@@ -139,7 +64,7 @@ namespace WPFCodeCreator.ViewModels
 				// ダイアログを表示する
 				if (dialog.ShowDialog() == true)
 				{
-					XMLUtil.Seialize<ModelList<PropertyM>>(dialog.FileName, this.PropertyItems);
+					XMLUtil.Seialize<ModelList<PropertyM>>(dialog.FileName, this.Parameters.PropertyItems);
 				}
 			}
 			catch(Exception e)
@@ -166,7 +91,7 @@ namespace WPFCodeCreator.ViewModels
 				// ダイアログを表示する
 				if (dialog.ShowDialog() == true)
 				{
-					this.PropertyItems = XMLUtil.Deserialize<ModelList<PropertyM>>(dialog.FileName);
+					this.Parameters.PropertyItems = XMLUtil.Deserialize<ModelList<PropertyM>>(dialog.FileName);
 				}
 			}
 			catch (Exception e)
@@ -184,7 +109,7 @@ namespace WPFCodeCreator.ViewModels
 		{
 			try
 			{
-				foreach (var tmp in this.PropertyItems.Items)
+				foreach (var tmp in this.Parameters.PropertyItems.Items)
 				{
 					tmp.IsVisible = false;
 				}
@@ -196,52 +121,20 @@ namespace WPFCodeCreator.ViewModels
 		}
 		#endregion
 
-		#region コードの更新
 		/// <summary>
-		/// コードの更新
+		/// ソースコードの更新
 		/// </summary>
-		public void RefleshCode()
-        {
-            try
-            {
-				StringBuilder code = new StringBuilder();
-
-				if (this.ClassVisible)
-                {
-					code.AppendLine($"public class {this.ClassName} : INotifyPropertyChanged");
-					code.AppendLine($"{{");
-				}
-
-				foreach (var tmp in this.PropertyItems)
-				{
-					if (tmp.IsVisible)
-					{
-						code.AppendLine(tmp.PropertyCode);
-					}
-				}
-
-				if (this.ClassVisible)
-				{
-					code.AppendLine("	#region INotifyPropertyChanged");
-					code.AppendLine("	public event PropertyChangedEventHandler PropertyChanged;");
-					code.AppendLine("");
-					code.AppendLine("	private void NotifyPropertyChanged(String info)");
-					code.AppendLine("	{");
-					code.AppendLine("		if (PropertyChanged != null)");
-					code.AppendLine("		{");
-					code.AppendLine("			PropertyChanged(this, new PropertyChangedEventArgs(info));");
-					code.AppendLine("		}");
-					code.AppendLine("	}");
-					code.AppendLine("	#endregion");
-					code.AppendLine($"}}");
-				}
-				this.PropertyCode = code.ToString();
+		public void RefreshCode()
+		{
+			try
+			{
+				this.Parameters.Refresh();
 			}
-			catch
-            {
+			catch (Exception e)
+			{
+				ShowMessage.ShowErrorOK(e.Message, "Error");
+			}
+		}
 
-            }
-        }
-		#endregion
 	}
 }

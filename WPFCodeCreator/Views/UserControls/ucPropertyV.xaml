@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Margin="5" Header="ソースコード">
-            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding PropertyCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding Parameters.SourceCode, Mode=OneWay}"/>
         </GroupBox>
 
         <GroupBox Header="入力項目" Grid.Column="1" Margin="5">
@@ -41,29 +41,19 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <CheckBox IsChecked="{Binding ClassVisible}" VerticalAlignment="Center" Margin="5" Content="クラス表示">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="Checked">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                            <b:EventTrigger EventName="Unchecked">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-                    </CheckBox>
-                    <TextBox Text="{Binding ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1">
-                        <b:Interaction.Triggers>
-                            <b:EventTrigger EventName="TextChanged">
-                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
-                            </b:EventTrigger>
-                        </b:Interaction.Triggers>
-                    </TextBox>
+                    <CheckBox IsChecked="{Binding Parameters.ClassVisible}" VerticalAlignment="Center" Margin="5" Content="クラス表示"/>
+
+
+                    <TextBox Text="{Binding Parameters.ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             VerticalAlignment="Center" Margin="5" Grid.Column="1" Cursor="IBeam"/>
+
+
                 </Grid>
 
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding PropertyItems.Items}" Margin="5" Grid.Row="1">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Parameters.PropertyItems.Items}" Margin="5" Grid.Row="1">
                     <b:Interaction.Triggers>
-                        <b:EventTrigger EventName="CurrentCellChanged">
-                            <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding}"/>
+                        <b:EventTrigger EventName="SelectedCellsChanged">
+                            <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
                     <DataGrid.Columns>
@@ -73,10 +63,10 @@
                                     <CheckBox IsChecked="{Binding IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>
@@ -89,10 +79,10 @@
                                     <CheckBox IsChecked="{Binding IsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>
@@ -109,10 +99,10 @@
                                     <CheckBox IsChecked="{Binding NullCheck, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <b:CallMethodAction MethodName="RefleshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>

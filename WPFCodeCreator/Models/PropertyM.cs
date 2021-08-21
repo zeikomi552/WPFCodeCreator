@@ -80,9 +80,9 @@ namespace WPFCodeCreator.Models
 				if (!_TypeName.Equals(value))
 				{
 					_TypeName = value;
-					InitialValueAutoSet();
 					NotifyPropertyChanged("TypeName");
 					NotifyPropertyChanged("PropertyCode");
+					InitialValueAutoSet();
 				}
 			}
 		}
