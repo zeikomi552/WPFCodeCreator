@@ -147,7 +147,7 @@ namespace WPFCodeCreator.Models
 		{
 			get
 			{
-				return RefleshCode();
+				return RefreshCode();
 			}
 		}
 		#endregion
@@ -157,7 +157,7 @@ namespace WPFCodeCreator.Models
 		/// ソースコードのリフレッシュ
 		/// </summary>
 		/// <returns>ソースコード</returns>
-		private string RefleshCode()
+		private string RefreshCode()
 		{
 			StringBuilder cmd = new StringBuilder();
 			cmd.AppendLine($"#region {this.Description}");
