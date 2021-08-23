@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCodeCreator", "WPFCodeCreator\WPFCodeCreator.csproj", "{D257F8A1-E87F-4DC8-A1B3-7422EEC407D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCodeCreator", "WPFCodeCreator\WPFCodeCreator.csproj", "{D257F8A1-E87F-4DC8-A1B3-7422EEC407D4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVMCore", "MVVMCore\MVVMCore.csproj", "{B99537ED-550E-4B27-A1E9-DAEEF2FAE2C9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WPFCodeCreatorInstaller", "WPFCodeCreatorInstaller\WPFCodeCreatorInstaller.vdproj", "{A2FBCA79-EEE9-496E-9721-157E720713A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{B99537ED-550E-4B27-A1E9-DAEEF2FAE2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B99537ED-550E-4B27-A1E9-DAEEF2FAE2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B99537ED-550E-4B27-A1E9-DAEEF2FAE2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FBCA79-EEE9-496E-9721-157E720713A3}.Debug|Any CPU.ActiveCfg = Debug
+		{A2FBCA79-EEE9-496E-9721-157E720713A3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
