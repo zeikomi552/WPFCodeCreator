@@ -54,6 +54,7 @@ https://github.com/zeikomi552/WPFCodeCreator/releases
 ## ライセンス
 
 Copyright (c) Zeikomi552@プログラマーやめました All rights reserved.
+
 Licensed under the MIT license.
 
 以上
