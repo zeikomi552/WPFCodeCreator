@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -208,7 +216,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://www.premium-tsubu-hero.net/"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_2E50C85C385C410AA1D9A825559C0BD8"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -740,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5B0B67E511AA48F8A59DC4BD9168ED31"
             {
-            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Release\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Debug\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
