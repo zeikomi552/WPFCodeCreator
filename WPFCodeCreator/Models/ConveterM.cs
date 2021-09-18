@@ -115,7 +115,7 @@ namespace WPFCodeCreator.Models
 			code.AppendLine($"	#region IValueConverter メンバ");
 			code.AppendLine($"	public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)");
 			code.AppendLine($"	{{");
-			code.AppendLine($"		({this.BindingTypeName}) target = ({this.BindingTypeName})value;");
+			code.AppendLine($"		var target = ({this.BindingTypeName})value;");
 
 			bool tmp = false;
 			var init_value = PropertyM.GetInitialValue(this.ConvertTypeName, out tmp);
