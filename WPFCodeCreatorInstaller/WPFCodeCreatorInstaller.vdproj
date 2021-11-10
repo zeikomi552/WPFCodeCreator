@@ -198,15 +198,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WPFCodeCreator"
-        "ProductCode" = "8:{02C37A1E-D73E-409B-8E72-54D5D3CB9D34}"
-        "PackageCode" = "8:{FB63B7EA-6FF8-400A-A92A-A49DC8E55788}"
+        "ProductCode" = "8:{F8173AE8-06BB-44C8-B2B0-B00317C2C291}"
+        "PackageCode" = "8:{23949CF1-4EDF-4D66-ADB5-A35FBDB1C9D4}"
         "UpgradeCode" = "8:{96F09741-03DC-4928-92D8-65584BE63207}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0.1"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:Zeikomi"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -748,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5B0B67E511AA48F8A59DC4BD9168ED31"
             {
-            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Debug\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
