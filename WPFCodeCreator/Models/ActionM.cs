@@ -172,7 +172,7 @@ namespace WPFCodeCreator.Models
 			cmd.AppendLine("");
 			cmd.AppendLine($"	public {this.TypeName} {this.ValueName}");
 			cmd.AppendLine("	{");
-			cmd.AppendLine($"		get {{ return (int)GetValue({this.ValueName}Property); }} ");
+			cmd.AppendLine($"		get {{ return ({this.TypeName})GetValue({this.ValueName}Property); }} ");
 			cmd.AppendLine($"		set {{ SetValue({this.ValueName}Property, value); }} ");
 			cmd.AppendLine("	}");
 			cmd.AppendLine("");

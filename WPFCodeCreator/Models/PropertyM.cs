@@ -77,7 +77,7 @@ namespace WPFCodeCreator.Models
 			}
 			set
 			{
-				if (!_TypeName.Equals(value))
+				if (_TypeName == null || !_TypeName.Equals(value))
 				{
 					_TypeName = value;
 					NotifyPropertyChanged("TypeName");
@@ -104,7 +104,7 @@ namespace WPFCodeCreator.Models
 			}
 			set
 			{
-				if (!_ValueName.Equals(value))
+				if (_ValueName == null || !_ValueName.Equals(value))
 				{
 					_ValueName = value;
 					NotifyPropertyChanged("ValueName");
@@ -130,7 +130,7 @@ namespace WPFCodeCreator.Models
 			}
 			set
 			{
-				if (!_InitializeValue.Equals(value))
+				if (_InitializeValue == null || !_InitializeValue.Equals(value))
 				{
 					_InitializeValue = value;
 					NotifyPropertyChanged("InitializeValue");
@@ -156,7 +156,7 @@ namespace WPFCodeCreator.Models
 			}
 			set
 			{
-				if (!_Description.Equals(value))
+				if (_Description == null || !_Description.Equals(value))
 				{
 					_Description = value;
 					NotifyPropertyChanged("Description");
@@ -222,7 +222,7 @@ namespace WPFCodeCreator.Models
 				if (kata.Substring(kata.Length - 1).Equals("?"))
 				{
 					null_check = true;
-					return null;
+					return "null";
 				}
 				else if (kata.Equals("int"))
 				{
