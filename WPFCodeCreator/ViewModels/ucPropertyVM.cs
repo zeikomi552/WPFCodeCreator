@@ -122,8 +122,6 @@ namespace WPFCodeCreator.ViewModels
                 // ダイアログを表示する
                 if (dialog.ShowDialog() == true)
                 {
-					//this.Parameters.PropertyItems = XMLUtil.Deserialize<ModelList<PropertyM>>(dialog.FileName);
-
 					foreach (var filename in dialog.FileNames)
 					{
                         var text = File.ReadAllText(filename);
