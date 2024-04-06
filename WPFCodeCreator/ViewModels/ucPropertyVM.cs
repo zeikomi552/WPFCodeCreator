@@ -135,7 +135,13 @@ namespace WPFCodeCreator.ViewModels
                         {
                             foreach (var vl in field.Declaration.Variables)
                             {
-                                this.Parameters.PropertyItems.Items.Add(new PropertyM() { TypeName = field.Declaration.Type.ToString(), ValueName = vl.Identifier.Text });
+								string valueName = vl.Identifier.Text;
+								if (!string.IsNullOrEmpty(valueName) && valueName.ElementAt(0).Equals('_'))
+								{
+                                    valueName = valueName.Substring(1);
+                                }
+
+                                this.Parameters.PropertyItems.Items.Add(new PropertyM() { IsVisible = true, TypeName = field.Declaration.Type.ToString(), ValueName = valueName });
                             }
                         }
                     }
