@@ -166,9 +166,9 @@ namespace WPFCodeCreator.Models
 			cmd.AppendLine($"	public static readonly DependencyProperty {this.ValueName}Property");
 			cmd.AppendLine($"		= DependencyProperty.Register(\"{this.ValueName}\", typeof({this.TypeName}), typeof({this.ClassName}Behavior), null);");
 			cmd.AppendLine("");
-			cmd.AppendLine("	public int SampleValue");
+			cmd.AppendLine("	public {this.TypeName} SampleValue");
 			cmd.AppendLine("	{");
-			cmd.AppendLine($"		get {{ return (int)this.GetValue({this.ValueName}Property); }}");
+			cmd.AppendLine($"		get {{ return ({this.TypeName})this.GetValue({this.ValueName}Property); }}");
 			cmd.AppendLine($"		set {{ this.SetValue({this.ValueName}Property, value); }}");
 			cmd.AppendLine("	}");
 			cmd.AppendLine("");
