@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2E50C85C385C410AA1D9A825559C0BD8"
+        "MsmKey" = "8:_5B0B67E511AA48F8A59DC4BD9168ED31"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5B0B67E511AA48F8A59DC4BD9168ED31"
+        "MsmKey" = "8:_61D7C1A6C91245C8B7734456CC61477E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,9 +122,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E50C85C385C410AA1D9A825559C0BD8"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61D7C1A6C91245C8B7734456CC61477E"
             {
-            "SourcePath" = "8:C:\\icons\\app.ico"
+            "SourcePath" = "8:..\\WPFCodeCreator\\app.ico"
             "TargetName" = "8:app.ico"
             "Tag" = "8:"
             "Folder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
@@ -216,7 +216,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://www.premium-tsubu-hero.net/"
-        "ARPPRODUCTICON" = "8:_2E50C85C385C410AA1D9A825559C0BD8"
+        "ARPPRODUCTICON" = "8:_61D7C1A6C91245C8B7734456CC61477E"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -330,7 +330,7 @@
             "Target" = "8:_5B0B67E511AA48F8A59DC4BD9168ED31"
             "Folder" = "8:_6AFF767653B0475691FF08FB5B5B16C7"
             "WorkingFolder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
-            "Icon" = "8:_2E50C85C385C410AA1D9A825559C0BD8"
+            "Icon" = "8:_61D7C1A6C91245C8B7734456CC61477E"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F3BBF8B84FB24AC8A8F83C2D748CA097"
@@ -344,7 +344,7 @@
             "Target" = "8:_5B0B67E511AA48F8A59DC4BD9168ED31"
             "Folder" = "8:_1F8575E117E342CDAB0592F78F85E8F9"
             "WorkingFolder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
-            "Icon" = "8:_2E50C85C385C410AA1D9A825559C0BD8"
+            "Icon" = "8:_61D7C1A6C91245C8B7734456CC61477E"
             "Feature" = "8:"
             }
         }
@@ -748,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5B0B67E511AA48F8A59DC4BD9168ED31"
             {
-            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Debug\\net6.0-windows7.0\\apphost.exe"
+            "SourcePath" = "8:..\\WPFCodeCreator\\obj\\Release\\net6.0-windows7.0\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_647BD449D1494CE69F729BCA6C6E1453"
