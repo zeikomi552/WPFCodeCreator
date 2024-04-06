@@ -126,7 +126,7 @@ namespace WPFCodeCreator.Models
 			if (this.ClassVisible)
 			{
 				code.AppendLine("	#region INotifyPropertyChanged");
-				code.AppendLine("	public event PropertyChangedEventHandler PropertyChanged;");
+				code.AppendLine("	public event PropertyChangedEventHandler? PropertyChanged;");
 				code.AppendLine("");
 				code.AppendLine("	private void NotifyPropertyChanged(String info)");
 				code.AppendLine("	{");

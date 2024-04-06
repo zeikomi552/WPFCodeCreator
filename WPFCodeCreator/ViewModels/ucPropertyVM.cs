@@ -1,8 +1,11 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.Win32;
 using MVVMCore.BaseClass;
 using MVVMCore.Common.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,13 +102,57 @@ namespace WPFCodeCreator.ViewModels
 				ShowMessage.ShowErrorOK(e.Message, "Error");
 			}
 		}
-		#endregion
+        #endregion
 
-		#region チェック解除
-		/// <summary>
-		/// チェック解除
-		/// </summary>
-		public void ResetCheck()
+        #region 読込処理
+        /// <summary>
+        /// 読込処理
+        /// </summary>
+        public void LoadCS()
+        {
+            try
+            {
+                // ダイアログのインスタンスを生成
+                var dialog = new OpenFileDialog();
+
+                // ファイルの種類を設定
+                dialog.Filter = "C#ソースコードファイル(*.cs)|*.cs";
+                dialog.Multiselect = true;
+
+                // ダイアログを表示する
+                if (dialog.ShowDialog() == true)
+                {
+					//this.Parameters.PropertyItems = XMLUtil.Deserialize<ModelList<PropertyM>>(dialog.FileName);
+
+					foreach (var filename in dialog.FileNames)
+					{
+                        var text = File.ReadAllText(filename);
+                        var tree = CSharpSyntaxTree.ParseText(text);
+                        var root = tree.GetCompilationUnitRoot();
+                        var fields = root.DescendantNodes().OfType<FieldDeclarationSyntax>();
+
+                        foreach (FieldDeclarationSyntax field in fields)
+                        {
+                            foreach (var vl in field.Declaration.Variables)
+                            {
+                                this.Parameters.PropertyItems.Items.Add(new PropertyM() { TypeName = field.Declaration.Type.ToString(), ValueName = vl.Identifier.Text });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowErrorOK(e.Message, "Error");
+            }
+        }
+        #endregion
+
+        #region チェック解除
+        /// <summary>
+        /// チェック解除
+        /// </summary>
+        public void ResetCheck()
 		{
 			try
 			{

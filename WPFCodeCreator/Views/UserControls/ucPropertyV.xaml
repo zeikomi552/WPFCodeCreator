@@ -142,6 +142,14 @@
                         </b:Interaction.Triggers>
 
                     </Button>
+                    <Button Grid.Column="3" Height="50" Margin="5,5,5,5" Content="C#読込">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Click">
+                                <b:CallMethodAction MethodName="LoadCS" TargetObject="{Binding}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+
+                    </Button>
                 </Grid>
             </Grid>
         </GroupBox>
