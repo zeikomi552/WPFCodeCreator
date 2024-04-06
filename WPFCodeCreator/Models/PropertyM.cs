@@ -280,9 +280,9 @@ namespace WPFCodeCreator.Models
 		private string CreateProperty()
         {
 			StringBuilder cmd = new StringBuilder();
-			cmd.AppendLine($"	#region {Description}[{ValueName}]プロパティ");
+			cmd.AppendLine($"	#region {Description}");
 			cmd.AppendLine("	/// <summary>");
-			cmd.AppendLine($"	/// {Description}[{ValueName}]プロパティ用変数");
+			cmd.AppendLine($"	/// {Description}");
 			cmd.AppendLine("	/// </summary>");
 
 			// リスト表示
@@ -296,7 +296,7 @@ namespace WPFCodeCreator.Models
 			}
 
 			cmd.AppendLine("	/// <summary>");
-			cmd.AppendLine($"	/// {Description}[{ValueName}]プロパティ");
+			cmd.AppendLine($"	/// {Description}");
 			cmd.AppendLine("	/// </summary>");
 
 			// リスト表示
