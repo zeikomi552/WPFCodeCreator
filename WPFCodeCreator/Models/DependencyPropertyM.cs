@@ -145,7 +145,7 @@ namespace WPFCodeCreator.Models
 			code.AppendLine($"	typeof({this.TypeName}),    // プロパティの型");
 			code.AppendLine($"	typeof({this.ClassName}),　 // コントロールの型");
 			code.AppendLine("	new FrameworkPropertyMetadata(   // メタデータ");
-			code.AppendLine("				0,");
+			code.AppendLine("				null,");
 			code.AppendLine($"				new PropertyChangedCallback({this.ValueName}Changed)));");
 			code.AppendLine("");
 			code.AppendLine("");
@@ -168,7 +168,7 @@ namespace WPFCodeCreator.Models
 			code.AppendLine("	/// <summary>");
 			code.AppendLine("	/// 依存プロパティのラッパー");
 			code.AppendLine("	/// </summary>");
-			code.AppendLine($"	public int {this.ValueName}");
+			code.AppendLine($"	public {this.TypeName} {this.ValueName}");
 			code.AppendLine("	{");
 			code.AppendLine($"		get {{ return (int)GetValue({this.ValueName}Property); }}");
 			code.AppendLine($"		set {{ SetValue({this.ValueName}Property, value); }}");
