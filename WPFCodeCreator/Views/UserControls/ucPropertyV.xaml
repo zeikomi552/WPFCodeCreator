@@ -20,15 +20,16 @@
     </b:Interaction.Triggers>
     <Grid DataContext="{Binding Source={StaticResource prop_vm}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" MinWidth="100"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*" MinWidth="100"/>
         </Grid.ColumnDefinitions>
 
         <GroupBox Margin="5" Header="ソースコード">
             <TextBox Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding Parameters.SourceCode, Mode=OneWay}"/>
         </GroupBox>
-
-        <GroupBox Header="入力項目" Grid.Column="1" Margin="5">
+        <GridSplitter Grid.Column="1" Width="2" HorizontalAlignment="Stretch" />
+        <GroupBox Margin="5" Header="入力項目" Grid.Column="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
