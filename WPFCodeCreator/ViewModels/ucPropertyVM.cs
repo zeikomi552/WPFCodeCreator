@@ -129,28 +129,20 @@ namespace WPFCodeCreator.ViewModels
                         var text = File.ReadAllText(filename);
                         var tree = CSharpSyntaxTree.ParseText(text);
                         var root = tree.GetCompilationUnitRoot();
-                        var fields = root.DescendantNodes().OfType<FieldDeclarationSyntax>();
+                        var fields = root.DescendantNodes().OfType<PropertyDeclarationSyntax>();
 
 						
-                        foreach (FieldDeclarationSyntax field in fields)
+                        foreach (var field in fields)
                         {
-                            foreach (var vl in field.Declaration.Variables)
-                            {
-								var trivia = field.GetLeadingTrivia().ToString();
+                            var trivia = field.GetLeadingTrivia().ToString();
 
-								// コメント抜き出し
-                                var match = Regex.Match(trivia, @"<summary>[\s\S]*?</summary>");
-								// 不要な文字列削除
-								var comment = match.Value.Replace("<summary>", "").Replace("</summary>", "").Replace("\r\n", "").Replace("///","").Replace(" ","");
-
-                                string valueName = vl.Identifier.Text;
-								if (!string.IsNullOrEmpty(valueName) && valueName.ElementAt(0).Equals('_'))
-								{
-                                    valueName = valueName.Substring(1);
-                                }
-
-                                this.Parameters.PropertyItems.Items.Add(new PropertyM() { IsVisible = true, TypeName = field.Declaration.Type.ToString(), ValueName = valueName, Description = comment });
-                            }
+							// コメント抜き出し
+							var match = Regex.Match(trivia, @"<summary>[\s\S]*?</summary>");
+							// 不要な文字列削除
+							var comment = match.Value.Replace("<summary>", "").Replace("</summary>", "").Replace("\r\n", "").Replace("///", "").Replace(" ", "").Replace("\t","");
+							var type = field.Type.ToString();
+							var value = field.Identifier.Text;
+                            this.Parameters.PropertyItems.Items.Add(new PropertyM() { IsVisible = true, TypeName = type, ValueName = value, Description = comment });
                         }
                     }
                 }
