@@ -23,15 +23,9 @@ namespace WPFCodeCreator.Views
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public MainWindow(IRegionManager regionManager)
+        public MainWindow()
         {
             InitializeComponent();
-
-            regionManager.RegisterViewWithRegion("PropertyRegion", typeof(ucPropertyV));
-            regionManager.RegisterViewWithRegion("DependensyPropertyRegion", typeof(ucDependencyPropertyV));
-            regionManager.RegisterViewWithRegion("ConverterRegion", typeof(ucConverterV));
-            regionManager.RegisterViewWithRegion("ActionRegion", typeof(ucActionV));
-            regionManager.RegisterViewWithRegion("BehaviorRegion", typeof(ucBehaviorV));
         }
     }
 }
