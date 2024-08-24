@@ -6,25 +6,26 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:WPFCodeCreator"
         TitleCharacterCasing="Normal"
-        xmlns:UserControls="clr-namespace:WPFCodeCreator.Views.UserControls" x:Class="WPFCodeCreator.MainWindow"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:UserControls="clr-namespace:WPFCodeCreator.Views.UserControls" x:Class="WPFCodeCreator.Views.MainWindow"
         mc:Ignorable="d"
         Title="WPFCodeCreator" Height="800" Width="1200" Icon="/app.ico">
     <Grid>
         <TabControl>
             <TabItem Header="プロパティ">
-                <UserControls:ucPropertyV/>
+                <ContentControl prism:RegionManager.RegionName="PropertyRegion" />
             </TabItem>
             <TabItem Header="依存プロパティ">
-                <UserControls:ucDependencyPropertyV/>
+                <ContentControl prism:RegionManager.RegionName="DependensyPropertyRegion" />
             </TabItem>
             <TabItem Header="コンバーター">
-                <UserControls:ucConverterV/>
+                <ContentControl prism:RegionManager.RegionName="ConverterRegion" />
             </TabItem>
             <TabItem Header="アクション">
-                <UserControls:ucActionV />
+                <ContentControl prism:RegionManager.RegionName="ActionRegion" />
             </TabItem>
             <TabItem Header="ビヘイビア">
-                <UserControls:ucBehaviorV />
+                <ContentControl prism:RegionManager.RegionName="BehaviorRegion" />
             </TabItem>
             
         </TabControl>

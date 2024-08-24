@@ -13,17 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Prism.Navigation.Regions;
+using WPFCodeCreator.Views.UserControls;
 
-namespace WPFCodeCreator
+namespace WPFCodeCreator.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public MainWindow()
+        public MainWindow(IRegionManager regionManager)
         {
             InitializeComponent();
+
+            regionManager.RegisterViewWithRegion("PropertyRegion", typeof(ucPropertyV));
+            regionManager.RegisterViewWithRegion("DependensyPropertyRegion", typeof(ucDependencyPropertyV));
+            regionManager.RegisterViewWithRegion("ConverterRegion", typeof(ucConverterV));
+            regionManager.RegisterViewWithRegion("ActionRegion", typeof(ucActionV));
+            regionManager.RegisterViewWithRegion("BehaviorRegion", typeof(ucBehaviorV));
         }
     }
 }
