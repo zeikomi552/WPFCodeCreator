@@ -11,9 +11,13 @@ namespace WPFCodeCreator.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="regionManager">RegionManager</param>
         public MainWindowViewModel(IRegionManager regionManager)
         {
-            regionManager.RegisterViewWithRegion("PropertyRegion", typeof(ucPropertyV));
+            regionManager.RegisterViewWithRegion("PropertyRegion", typeof(ucProperty));
             regionManager.RegisterViewWithRegion("DependensyPropertyRegion", typeof(ucDependencyPropertyV));
             regionManager.RegisterViewWithRegion("ConverterRegion", typeof(ucConverterV));
             regionManager.RegisterViewWithRegion("ActionRegion", typeof(ucActionV));

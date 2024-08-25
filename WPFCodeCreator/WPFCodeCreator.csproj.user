@@ -19,7 +19,7 @@
     <Compile Update="Views\UserControls\ucDependencyPropertyV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControls\ucPropertyV.xaml.cs">
+    <Compile Update="Views\UserControls\ucProperty.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -39,7 +39,7 @@
     <Page Update="Views\UserControls\ucDependencyPropertyV.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\ucPropertyV.xaml">
+    <Page Update="Views\UserControls\ucProperty.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

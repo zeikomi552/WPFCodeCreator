@@ -18,9 +18,9 @@ namespace WPFCodeCreator.Views.UserControls
     /// <summary>
     /// ucPropertyV.xaml の相互作用ロジック
     /// </summary>
-    public partial class ucPropertyV : UserControl
+    public partial class ucProperty : UserControl
     {
-        public ucPropertyV()
+        public ucProperty()
         {
             InitializeComponent();
         }

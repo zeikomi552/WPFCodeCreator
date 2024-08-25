@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace WPFCodeCreator.ViewModels
 {
-    public class ucPropertyVM : ViewModelBase
+    public class ucPropertyViewModel : ViewModelBase
     {
 
 		#region パラメータ[Parameters]プロパティ

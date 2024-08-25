@@ -1,4 +1,6 @@
 ﻿using MVVMCore.BaseClass;
+using Prism.Ioc;
+using Prism.Modularity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,11 @@ namespace WPFCodeCreator.Models
 {
     public class PropertyM : ModelBase
     {
-		#region 表示フラグ[IsVisible]プロパティ
-		/// <summary>
-		/// 表示フラグ[IsVisible]プロパティ用変数
-		/// </summary>
-		bool _IsVisible = false;
+        #region 表示フラグ[IsVisible]プロパティ
+        /// <summary>
+        /// 表示フラグ[IsVisible]プロパティ用変数
+        /// </summary>
+        bool _IsVisible = false;
 		/// <summary>
 		/// 表示フラグ[IsVisible]プロパティ
 		/// </summary>
