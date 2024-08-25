@@ -10,7 +10,7 @@
     <Compile Update="Views\UserControls\ucActionV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControls\ucBehaviorV.xaml.cs">
+    <Compile Update="Views\UserControls\ucBehavior.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\ucConverter.xaml.cs">
@@ -30,7 +30,7 @@
     <Page Update="Views\UserControls\ucActionV.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\ucBehaviorV.xaml">
+    <Page Update="Views\UserControls\ucBehavior.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ucConverter.xaml">

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFCodeCreator.Views.UserControls
 {
     /// <summary>
-    /// ucBehaviorV.xaml の相互作用ロジック
+    /// ucBehavior.xaml の相互作用ロジック
     /// </summary>
-    public partial class ucBehaviorV : UserControl
+    public partial class ucBehavior : UserControl
     {
-        public ucBehaviorV()
+        public ucBehavior()
         {
             InitializeComponent();
         }
