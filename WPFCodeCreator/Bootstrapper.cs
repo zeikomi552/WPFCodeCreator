@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFCodeCreator.Models;
+using WPFCodeCreator.Models.Interface;
 using WPFCodeCreator.ViewModels;
 using WPFCodeCreator.Views;
 using WPFCodeCreator.Views.UserControls;
@@ -28,10 +29,9 @@ namespace WPFCodeCreator
         {
             // オプションの設定などDryIocコンテナ独自の機能を使いたい場合
             var container = containerRegistry.GetContainer();
-            //container.Register<Items.Text>(/*オプション設定*/);
 
             // シングルトンクラスとして登録したい時
-            containerRegistry.RegisterSingleton<PropetyItemCollectionM>();
+            containerRegistry.Register<IPropetyItemCollectionM, PropetyItemCollectionM>();
         }
 
         protected override void ConfigureViewModelLocator()
