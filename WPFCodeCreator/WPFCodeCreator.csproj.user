@@ -16,7 +16,7 @@
     <Compile Update="Views\UserControls\ucConverterV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControls\ucDependencyPropertyV.xaml.cs">
+    <Compile Update="Views\UserControls\ucDependencyProperty.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\ucProperty.xaml.cs">
@@ -36,7 +36,7 @@
     <Page Update="Views\UserControls\ucConverterV.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\ucDependencyPropertyV.xaml">
+    <Page Update="Views\UserControls\ucDependencyProperty.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ucProperty.xaml">

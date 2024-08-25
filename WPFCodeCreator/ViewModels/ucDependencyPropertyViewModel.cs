@@ -8,7 +8,7 @@ using WPFCodeCreator.Models;
 
 namespace WPFCodeCreator.ViewModels
 {
-    public class ucDependencyPropertyVM : ViewModelBase
+    public class ucDependencyPropertyViewModel : ViewModelBase
     {
 
         #region パラメータ[Parameters]プロパティ
@@ -39,7 +39,7 @@ namespace WPFCodeCreator.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public ucDependencyPropertyVM()
+        public ucDependencyPropertyViewModel()
 		{
 		}
 
