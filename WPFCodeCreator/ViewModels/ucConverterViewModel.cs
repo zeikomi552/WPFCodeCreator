@@ -9,7 +9,7 @@ using WPFCodeCreator.Models;
 
 namespace WPFCodeCreator.ViewModels
 {
-    public class ucConverterVM : ViewModelBase
+    public class ucConverterViewModel : ViewModelBase
     {
 
         #region パラメータ[Parameters]プロパティ

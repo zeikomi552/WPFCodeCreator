@@ -64,6 +64,7 @@ namespace WPFCodeCreator
             // generic type
             ViewModelLocationProvider.Register<ucProperty, ucPropertyViewModel>();
             ViewModelLocationProvider.Register<ucDependencyProperty, ucDependencyPropertyViewModel>();
+            ViewModelLocationProvider.Register<ucConverter, ucConverterViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

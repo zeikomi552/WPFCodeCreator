@@ -6,12 +6,9 @@
              xmlns:local="clr-namespace:WPFCodeCreator.Views.UserControls"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-             xmlns:ViewModels="clr-namespace:WPFCodeCreator.ViewModels" x:Class="WPFCodeCreator.Views.UserControls.ucConverterV"
+             xmlns:ViewModels="clr-namespace:WPFCodeCreator.ViewModels" x:Class="WPFCodeCreator.Views.UserControls.ucConverter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <ViewModels:ucConverterVM/>
-    </UserControl.DataContext>
     <b:Interaction.Triggers>
         <b:EventTrigger>
             <b:CallMethodAction MethodName="Init" TargetObject="{Binding}"/>

@@ -19,7 +19,7 @@ namespace WPFCodeCreator.ViewModels
         {
             regionManager.RegisterViewWithRegion("PropertyRegion", typeof(ucProperty));
             regionManager.RegisterViewWithRegion("DependensyPropertyRegion", typeof(ucDependencyProperty));
-            regionManager.RegisterViewWithRegion("ConverterRegion", typeof(ucConverterV));
+            regionManager.RegisterViewWithRegion("ConverterRegion", typeof(ucConverter));
             regionManager.RegisterViewWithRegion("ActionRegion", typeof(ucActionV));
             regionManager.RegisterViewWithRegion("BehaviorRegion", typeof(ucBehaviorV));
         }

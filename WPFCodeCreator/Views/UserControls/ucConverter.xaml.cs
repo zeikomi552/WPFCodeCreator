@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFCodeCreator.Views.UserControls
 {
     /// <summary>
-    /// ucConverterV.xaml の相互作用ロジック
+    /// ucConverter.xaml の相互作用ロジック
     /// </summary>
-    public partial class ucConverterV : UserControl
+    public partial class ucConverter : UserControl
     {
-        public ucConverterV()
+        public ucConverter()
         {
             InitializeComponent();
         }
