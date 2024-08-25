@@ -18,10 +18,17 @@ namespace WPFCodeCreator.ViewModels
 {
     public class ucPropertyViewModel : ViewModelBase
     {
-		public ucPropertyViewModel(IPropetyItemCollectionM paramters)
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="paramters">パラメーター</param>
+        public ucPropertyViewModel(IPropetyItemCollectionM paramters)
 		{
 			this.Parameters = paramters;
 		}
+        #endregion
+
         #region パラメータ[Parameters]プロパティ
         /// <summary>
         /// パラメータ[Parameters]プロパティ用変数
@@ -113,12 +120,13 @@ namespace WPFCodeCreator.ViewModels
 				ShowMessage.ShowErrorOK(e.Message, "Error");
 			}
 		}
-		#endregion
+        #endregion
 
-		/// <summary>
-		/// ソースコードの更新
-		/// </summary>
-		public void RefreshCode()
+        #region ソースコードの更新
+        /// <summary>
+        /// ソースコードの更新
+        /// </summary>
+        public void RefreshCode()
 		{
 			try
 			{
@@ -129,6 +137,6 @@ namespace WPFCodeCreator.ViewModels
 				ShowMessage.ShowErrorOK(e.Message, "Error");
 			}
 		}
-
+		#endregion
 	}
 }
