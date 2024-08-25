@@ -53,12 +53,10 @@
                                     <CheckBox IsChecked="{Binding IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>
@@ -71,12 +69,10 @@
                                     <CheckBox IsChecked="{Binding IsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>
@@ -93,12 +89,10 @@
                                     <CheckBox IsChecked="{Binding NullCheck, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <b:Interaction.Triggers>
                                             <b:EventTrigger EventName="Checked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding Source={StaticResource prop_vm}}"/>-->
-                                                <!--<b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding}"/>-->
+                                                <b:CallMethodAction MethodName="RefreshCode" TargetObject="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>
                                     </CheckBox>
