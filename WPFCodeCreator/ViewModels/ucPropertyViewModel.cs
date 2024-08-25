@@ -47,16 +47,6 @@ namespace WPFCodeCreator.ViewModels
 		}
 		#endregion
 
-		#region 初期化処理
-		/// <summary>
-		/// 初期化処理
-		/// </summary>
-		public void Init()
-		{
-
-		}
-		#endregion
-
 		#region 保存処理
 		/// <summary>
 		/// 保存処理
@@ -116,10 +106,7 @@ namespace WPFCodeCreator.ViewModels
 		{
 			try
 			{
-				foreach (var tmp in this.Parameters.PropertyItems.Items)
-				{
-					tmp.IsVisible = false;
-				}
+				this.Parameters.ResetCheck();
 			}
 			catch (Exception e)
 			{

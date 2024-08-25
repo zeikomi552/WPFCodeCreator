@@ -26,5 +26,7 @@ namespace WPFCodeCreator.Models.Interface
         public void FileLoad();
 
         public void LoadCS();
+
+        public void ResetCheck();
     }
 }

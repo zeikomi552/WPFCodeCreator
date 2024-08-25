@@ -260,5 +260,25 @@ namespace WPFCodeCreator.Models
             }
         }
         #endregion
+
+        #region チェック解除
+        /// <summary>
+        /// チェック解除
+        /// </summary>
+        public void ResetCheck()
+        {
+            try
+            {
+                foreach (var tmp in this.PropertyItems.Items)
+                {
+                    tmp.IsVisible = false;
+                }
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowErrorOK(e.Message, "Error");
+            }
+        }
+        #endregion
     }
 }
