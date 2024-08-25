@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\UserControls\ucActionV.xaml.cs">
+    <Compile Update="Views\UserControls\ucAction.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\ucBehavior.xaml.cs">
@@ -27,7 +27,7 @@
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\ucActionV.xaml">
+    <Page Update="Views\UserControls\ucAction.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ucBehavior.xaml">

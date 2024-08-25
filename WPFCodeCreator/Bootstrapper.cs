@@ -32,40 +32,18 @@ namespace WPFCodeCreator
 
             // シングルトンクラスとして登録したい時
             containerRegistry.RegisterSingleton<PropetyItemCollectionM>();
-
-            //// 同じIFとして登録したい時
-            //// Items.Picture, Items.RichTextクラスはItems.IItemインターフェイスを継承している
-            //container.Register<Items.IItem, Items.Picture>(ifAlreadyRegistered: IfAlreadyRegistered.AppendNotKeyed);
-            //container.Register<Items.IItem, Items.RichText>(ifAlreadyRegistered: IfAlreadyRegistered.AppendNotKeyed);
-
-            //// 同じインスタンスでkeyを登録したいとき
-            //container.Register<Items.Text>(serviceKey: "1");
-            //container.Register<Items.Text>(serviceKey: "2");
-
-            //// containerRegistryからRegisterを実行するとDryIocコンテナ独自の機能は使えないため
-            //// デフォルトコンストラクタのみ実装されているクラスのみしか使用することができない
-            //// Items.Textクラスのコンストラクタはデフォルトコンストラクタのみ
-            //containerRegistry.Register<Items.Text>();
         }
 
         protected override void ConfigureViewModelLocator()
         {
             base.ConfigureViewModelLocator();
 
-            // type / type
-            //ViewModelLocationProvider.Register(typeof(ucProperty).ToString(), typeof(ucPropertyViewModel));
-
-            // type / factory
-            //ViewModelLocationProvider.Register(typeof(ucProperty).ToString(), () => Container.Resolve<ucPropertyViewModel>());
-
-            // generic factory
-            //ViewModelLocationProvider.Register<ucProperty>(() => Container.Resolve<ucPropertyViewModel>());
-
             // generic type
             ViewModelLocationProvider.Register<ucProperty, ucPropertyViewModel>();
             ViewModelLocationProvider.Register<ucDependencyProperty, ucDependencyPropertyViewModel>();
             ViewModelLocationProvider.Register<ucConverter, ucConverterViewModel>();
             ViewModelLocationProvider.Register<ucBehavior, ucBehaviorViewModel>();
+            ViewModelLocationProvider.Register<ucAction, ucActionViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
